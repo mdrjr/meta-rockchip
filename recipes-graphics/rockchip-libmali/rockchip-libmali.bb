@@ -10,9 +10,9 @@ LIC_FILES_CHKSUM = "file://END_USER_LICENCE_AGREEMENT.txt;md5=3918cc9836ad038c5a
 inherit local-git
 
 SRC_URI = " \
-	git://github.com/JeffyCN/mirrors.git;protocol=https;branch=libmali; \
+	git://github.com/mdrjr/mirrors.git;protocol=https;branch=libmali; \
 "
-SRCREV = "af1d910cd29d52e354f6679e46d1bf2bbc7ca476"
+SRCREV = "92183c8482e6173fa510f228e62b1c73c99be87d"
 S = "${WORKDIR}/git"
 
 DEPENDS = "coreutils-native libdrm"
