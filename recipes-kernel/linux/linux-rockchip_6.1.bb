@@ -6,7 +6,7 @@ require linux-rockchip.inc
 
 inherit local-git
 
-SRCREV = "4aa5b7a0fa4c5b2ab10a104cc72c85f81d3a94f2"
+SRCREV = "c345213e18476d78d782e61a6200f5f42585dfd5"
 
 SRC_URI = " \
       git://github.com/mdrjr/linux.git;protocol=https;nobranch=1;branch=linux-6.1-stan-rkr4; \
