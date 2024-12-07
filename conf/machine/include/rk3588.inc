@@ -12,6 +12,6 @@ LINUXLIBCVERSION := "6.1-custom%"
 KBUILD_DEFCONFIG := "rk3588_linux_defconfig"
 
 MALI_GPU := "valhall-g610"
-MALI_VERSION := "g13p0"
+MALI_VERSION := "g24p0"
 
 RK_ISP_VERSION := "3.0"
