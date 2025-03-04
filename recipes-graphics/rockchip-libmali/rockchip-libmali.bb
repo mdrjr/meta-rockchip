@@ -12,7 +12,7 @@ inherit local-git
 SRC_URI = " \
 	git://github.com/mdrjr/mirrors.git;protocol=https;branch=libmali; \
 "
-SRCREV = "92183c8482e6173fa510f228e62b1c73c99be87d"
+SRCREV = "af1d910cd29d52e354f6679e46d1bf2bbc7ca476"
 S = "${WORKDIR}/git"
 
 DEPENDS = "coreutils-native libdrm"
@@ -72,6 +72,7 @@ EXTRA_OEMESON = " \
 	-Dsubversion=${MALI_SUBVERSION} \
 	-Dplatform=${MALI_PLATFORM} \
 	-Dfirmware-dir=${nonarch_base_libdir}/firmware \
+	-Dwayland-egl=false \
 "
 
 do_install:append () {
