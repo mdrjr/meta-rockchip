@@ -1,13 +1,11 @@
-# Copyright (c) 2020, Rockchip Electronics Co., Ltd
+# Copyright (c) 2025, Rockchip Electronics Co., Ltd
 # Released under the MIT license (see COPYING.MIT for the terms)
 
-require conf/machine/include/rockchip-arm64-common.inc
+require conf/machine/include/arm/armv8-2a/tune-cortexa55.inc
+require conf/machine/include/rockchip-common.inc
 require conf/machine/include/mali.inc
 
 RK_SOC_FAMILY := "rk3568"
-
-PREFERRED_VERSION_linux-rockchip := "6.1%"
-LINUXLIBCVERSION := "6.1-custom%"
 
 MALI_GPU := "bifrost-g52"
 MALI_VERSION := "g24p0"

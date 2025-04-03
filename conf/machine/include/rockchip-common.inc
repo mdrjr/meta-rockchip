@@ -11,7 +11,7 @@ MACHINE_EXTRA_RRECOMMENDS:append = " \
 
 RK_ISP_VERSION := ""
 
-SERIAL_CONSOLES ?= "115200;ttyFIQ0"
+SERIAL_CONSOLES := "1500000;ttyFIQ0"
 KERNEL_IMAGETYPE ?= "Image"
 KBUILD_DEFCONFIG ?= "rockchip_linux_defconfig"
 MACHINEOVERRIDES .= ":rockchip"
@@ -23,9 +23,9 @@ PREFERRED_PROVIDER_virtual/kernel ?= "linux-rockchip"
 ROCKCHIP_KERNEL_COMPRESSED ?= "1"
 ROCKCHIP_KERNEL_IMAGES ?= "1"
 
-# Prefer using Rockchip BSP kernel 5.10
-PREFERRED_VERSION_linux-rockchip ?= "5.10%"
-LINUXLIBCVERSION ?= "5.10-custom%"
+# Prefer using Rockchip BSP kernel 6.1
+PREFERRED_VERSION_linux-rockchip ?= "6.1%"
+LINUXLIBCVERSION ?= "6.1-custom%"
 # Avoid old kernel version error
 OLDEST_KERNEL = "${@d.getVar('LINUXLIBCVERSION').split('-')[0]}"
 

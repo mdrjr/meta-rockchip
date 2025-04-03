@@ -1,13 +1,11 @@
-# Copyright (c) 2021, Rockchip Electronics Co., Ltd
+# Copyright (c) 2025, Rockchip Electronics Co., Ltd
 # Released under the MIT license (see COPYING.MIT for the terms)
 
-require conf/machine/include/rockchip-arm64-common.inc
+require conf/machine/include/arm/armv8-2a/tune-cortexa76-cortexa55.inc
+require conf/machine/include/rockchip-common.inc
 require conf/machine/include/mali.inc
 
 RK_SOC_FAMILY := "rk3588"
-
-PREFERRED_VERSION_linux-rockchip := "6.1%"
-LINUXLIBCVERSION := "6.1-custom%"
 
 KBUILD_DEFCONFIG := "rk3588_linux_defconfig"
 
