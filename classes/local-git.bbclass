@@ -7,9 +7,16 @@ do_fetch:prepend () {
     from bb.fetch2 import runfetchcmd
     import shlex
 
+    src_uri = (d.getVar('SRC_URI') or "").split()
+    if not src_uri:
+        return
+
+    if not any(bb.fetch.URI(uri).scheme == "git" for uri in src_uri):
+        return
+
     git = git.Git()
     bb.fetch2.get_srcrev(d)
-    fetcher = Fetch(d.getVar('SRC_URI').split(), d)
+    fetcher = Fetch(src_uri, d)
     urldata = fetcher.ud
     for u in urldata:
         if not urldata[u].method.supports_srcrev():
@@ -24,8 +31,8 @@ do_fetch:prepend () {
 
         repourl = git._get_repo_url(ud)
 
-        # Try an early full fetching
-        fetch_cmd = "LANG=C %s fetch --unshallow %s" % (ud.basecmd, shlex.quote(repourl))
+        # Fetch the latest remote repository and switch to the new HEAD
+        fetch_cmd = "%s fetch %s; mv FETCH_HEAD HEAD" % (ud.basecmd, shlex.quote(repourl))
         try:
             runfetchcmd(fetch_cmd, d, workdir=ud.clonedir)
         except bb.fetch2.FetchError:
