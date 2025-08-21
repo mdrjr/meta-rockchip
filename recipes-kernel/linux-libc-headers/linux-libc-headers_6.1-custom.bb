@@ -13,6 +13,7 @@ SRC_URI = " \
 	git://github.com/mdrjr/linux.git;protocol=https;nobranch=1;branch=linux-6.1-stan-rkr4; \
 "
 
-S = "${WORKDIR}/git"
+# Reset to the original value
+S = "${UNPACKDIR}/${BP}"
 
 LIC_FILES_CHKSUM = "file://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46"
