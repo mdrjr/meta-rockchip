@@ -3,9 +3,11 @@
 
 DEPENDS:append = " automake-native autoconf-native util-macros-native font-util-native xtrans-native libxshmfence rockchip-librga"
 
-SRCREV = "${AUTOREV}"
-SRC_URI:append = " git://github.com/JeffyCN/xorg-xserver;protocol=https;nobranch=1;branch=${PV}_2025_11_06;"
-SRC_URI:remove = "https://www.x.org/releases//individual/xserver/xorg-server-${PV}.tar.bz2"
+SRCREV = "29abbb89b8b1cc83b8b19629536235384ec66318"
+SRC_URI:append = " git://github.com/JeffyCN/xorg-xserver;protocol=https;nobranch=1;branch=21.1.22_2025_11_06;"
+SRC_URI:remove = "${XORG_MIRROR}/individual/xserver/${XORG_PN}-${PV}.tar.xz"
+
+S = "${UNPACKDIR}/${BP}"
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
